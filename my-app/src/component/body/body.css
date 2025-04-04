@@ -1,0 +1,299 @@
+.header-body {
+  margin: 16px 24px;
+}
+.toolbar-headline {
+  display: flex;
+  justify-content: space-between;
+}
+.toolbar-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.list-title {
+  padding: 15px;
+  color: #2564cf;
+}
+.toolbarSort-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.taskCreation-container {
+  box-shadow: 0px 1px 1px 0.5px rgba(0, 0, 0, 0.236);
+  border-radius: 2px;
+  padding: 0px 16px;
+  margin: 0px 24px;
+}
+.taskCreation {
+  display: flex;
+  border-block-end: 1px solid rgba(0, 0, 0, 0.177);
+}
+.addTask {
+  background-color: white;
+  color: #2564cf;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.addInput {
+  padding: 16px 14px;
+  border: none;
+}
+.addInput:focus {
+  border: none;
+  outline: none;
+}
+.addInput::placeholder {
+  color: #2564cf;
+}
+.dateButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.dateButton:hover {
+  background-color: white;
+}
+.componentList {
+  padding: 10px 0 24px 0px;
+  margin: 0px 24px 0px 24px;
+  border-radius: 2px;
+}
+.taskItem-container {
+  box-shadow: 0px 1px 1px 0.5px rgba(0, 0, 0, 0.236);
+  border-radius: 2px;
+  cursor: pointer;
+}
+/* .checkbox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.taskItem-body {
+  display: flex;
+  align-items: center;
+
+  margin-top: 8px;
+  padding: 0px 16px;
+}
+/* .checkBox-hover {
+  position: absolute;
+  left: 0;
+} */
+
+.taskItem-titleWrapper {
+  padding: 8px 14px;
+  background-color: transparent;
+  width:100%;
+  border: none;
+  display: flex;
+  cursor:pointer;
+  align-items: center;
+}
+.importantBtn-container {
+  margin-left: auto;
+  position: relative;
+}
+.btn-important {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chunkedScrollContainer {
+  overflow-y: "scroll";
+}
+.main {
+  position:relative;
+  
+}
+.main.shifted {
+  margin-left: 290px; /* Chiều rộng của sidebar */
+  transition: margin-left 0.3s ease;
+}
+.main.shifted-right{
+  margin-right:290px;
+  transition: margin-left 0.3s ease;
+}
+
+/* sidebar */
+
+.sidebar {
+  width: 290px;
+  height: 100vh;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.186);
+  position: fixed;
+  top: 49px;
+  background-color: white;
+}
+.sidebar-header {
+  padding: 16px 24px 0 24px;
+}
+.sidebar-header-container {
+}
+.sidebar-content {
+}
+.listItem-container.active::before {
+}
+.listItem-inner {
+  position: relative;
+  padding: 12px 24px 12px 24px;
+  display: grid;
+  grid-template-columns: 0.5fr 5fr auto;
+  /* place-items: center; */
+}
+.listItem-title {
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 16px;
+  text-decoration: none;
+  color:black;
+}
+.listItem-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listItem-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+
+  line-height: 20px;
+}
+.sidebar-staticline {
+  margin: 9px 16px;
+  height: 1px;
+  border: 0.1px solid #29282714;
+}
+.listItem-container:hover {
+  background-color: #f5f5f5;
+}
+.btn-sidebar {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+/*detail bar */
+.detailBar-container{
+  width: 290px;
+  height: 100vh;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.186);
+  position: fixed;
+  top: 49px;
+  background-color: #faf9f8;
+  right:0;
+  
+}
+
+.details-body{
+  margin-top:16px;
+  padding:0px 16px 0px 24px;
+}
+.detailHeader-titleWrapper{
+  background-color:white;
+  padding:16px;
+  display: flex;
+  align-items: center;
+}
+.section-container{
+
+}
+.section-innerClick{
+  padding:16px;
+  width:100%;
+  background-color: white;
+  border:none;
+ 
+  display:flex;
+  align-items: center;
+  
+}
+.section-inner{
+  display:flex;
+  align-items: center;
+}
+.section-icon{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.section-content{
+  margin:0px 16px; 
+}
+
+.section-innerClick:hover{
+  background-color: #a0a0a00d;
+}
+.section{
+  margin:16px 0px;
+ 
+}
+.noteContainer{
+  background-color: white;
+
+}
+
+.noteContainer .addNote {
+  padding: 16px 14px;
+  border: none;
+ 
+}
+.noteContainer .addNote:focus {
+  border: none;
+  outline: none;
+}
+.detail-footer{
+  position:absolute;
+  bottom:50px;
+  display:flex;
+  align-items: center;
+  height:48px;
+  width:100%;
+ 
+  padding: 16px 24px;
+  border-top: 1px solid black;
+}
+.detailFooter-container{
+  width:100%;
+  display:flex;
+  align-items: center;
+  position:relative;
+
+}
+.btn-closeDetailBarContainer {
+  display: flex;
+
+ /* Đẩy nút đóng sang bên phải */
+}
+.btn-removeTask,
+.btn-closeDetailBar{
+  background-color:transparent;
+  cursor: pointer;
+  border:none;
+}
+.btn-removeTaskContainer {
+  display: flex;
+  margin-left: auto; /* Đẩy nút remove task về phía bên phải */
+}
+
+/**/
+
+.hidden {
+  display: none; /* Ẩn icon nếu cần */
+}
+.width-100{
+  width:100%
+} 
+.isClick{
+  color:#2564CF;
+}
+.fluentIcon{
+  width:20px;
+  height: 20px;
+}
