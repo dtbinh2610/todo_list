@@ -1,0 +1,38 @@
+// import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Login from "./component/login/login.jsx"
+import Register from "./component/register/register.jsx"
+import ContentBody from "./component/Content/myday.jsx";
+import App from "./App.jsx";
+import'./assets/gloabal.css'
+import MyDay from "./component/Content/myday.jsx";
+import Important from "./component/Content/important.jsx";
+const BASE_URL = "https://localhost:7176"
+
+// const  router = createBrowserRouter([
+//   {path:"/app",element:<App/>},
+//   {path:"/login",element:<Login BASE_URL={BASE_URL}/>},
+//   {path:"/Register",element:<Register/>}
+// ]);
+
+createRoot(document.getElementById("root")).render(
+  <>
+    {/* <RouterProvider router={router} /> */}
+    <BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<Login BASE_URL={BASE_URL}/>}/>
+      <Route path="/register" element={<Register/>}/>
+      <Route path="/app" element={<App/>}>
+            <Route path="MyDay" element={<MyDay BASE_URL={BASE_URL}/>}/>
+            <Route path="Important" element={<Important BASE_URL={BASE_URL}/>}/>
+
+      </Route>
+      
+    </Routes>
+    </BrowserRouter>
+    </>
+); 
+
+//Link to 

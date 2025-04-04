@@ -1,0 +1,48 @@
+.checkbox,
+.btn-important {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-default,
+.icon-hover {
+  position: absolute;
+  top: -9px;
+  left: -10px;
+  transition: opacity 0.3s ease;
+}
+
+.icon-hover {
+  opacity: 0; /* Ẩn icon hover mặc định */
+}
+
+
+
+.hidden {
+  display: none; /* Ẩn icon nếu cần */
+}
+
+.btn-important {
+  cursor: pointer;
+}
+
+/* Đảm bảo icon-hover luôn hiển thị khi nhấn */
+.checkbox .icon,
+.btn-important .icon-hover {
+  opacity: 1 !important; /* Sử dụng !important để đảm bảo không bị ảnh hưởng bởi hover */
+}
+.chunkedScrollContainer {
+  /* Thiết lập chiều cao cố định để kích hoạt scroll */
+  height: 400px; /* Thay đổi theo nhu cầu */
+  overflow-y: auto; /* Cho phép cuộn dọc */
+  /* Thêm khoảng cách nếu cần thiết */
+}
+
+.componentList {
+  /* Giữ cho list không bị ảnh hưởng bởi scroll */
+  padding-right: 20px; /* Thêm khoảng cách nếu cần thiết */
+}
+
+.taskItem-container {
+  margin-bottom: 10px; /* Thêm khoảng cách giữa các task */
+}
