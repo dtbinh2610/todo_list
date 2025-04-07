@@ -9,6 +9,7 @@ import App from "./App.jsx";
 import'./assets/gloabal.css'
 import MyDay from "./component/Content/myday.jsx";
 import Important from "./component/Content/important.jsx";
+import CompletedTask from "./component/Content/completed.jsx";
 const BASE_URL = "https://localhost:7176"
 
 // const  router = createBrowserRouter([
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")).render(
       <Route path="/app" element={<App/>}>
             <Route path="MyDay" element={<MyDay BASE_URL={BASE_URL}/>}/>
             <Route path="Important" element={<Important BASE_URL={BASE_URL}/>}/>
+            <Route path="CompletedTask" element={<CompletedTask BASE_URL={BASE_URL}/>}/>
 
       </Route>
       

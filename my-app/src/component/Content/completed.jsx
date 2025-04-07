@@ -4,7 +4,7 @@ import "./content.css";
 import { useOutletContext } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
-export default function Important({ BASE_URL }) {
+export default function CompletedTask({ BASE_URL }) {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [tasks, setTasks] = useState([]);
   const {
@@ -21,21 +21,16 @@ export default function Important({ BASE_URL }) {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`${BASE_URL}/api/Task/GetTaskIsImportant?userid=${user.id}`)
+    fetch(`${BASE_URL}/api/Task/GetTaskIscomplete?userid=${user.id}`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Lỗi khi đăng nhập");
+          throw new Error("Lỗi khi khi tải dữ liệu");
         }
         return response.json();
       })
       .then((result) => {
         console.log("aloasd:", result);
-        setTasks(result)
-        // setTasks((prevTasks) =>
-        //   prevTasks.map((task) =>
-        //     task.id === id ? { ...task, isMyDay: false } : task
-        //   )
-        // );
+        setTasks(result)      
       })
       .catch((error) => {
         console.error("Lỗi:", error);
@@ -227,7 +222,7 @@ export default function Important({ BASE_URL }) {
                   tasks
                     .filter(
                       (task) =>
-                        task.isCompleted == false && task.isImportant == true
+                        task.isCompleted == true 
                     )
                     .map((task) => (
                       <div key={task.id} className="taskItem-container">
@@ -358,7 +353,7 @@ function HeaderBody({ handleSideBar, openSidebar }) {
 
             <div className="toolbar-title">
               <h2 className="list-title">
-                <span>Important</span> 
+                <span>Completed</span> 
               </h2>
             </div>
           </div>
