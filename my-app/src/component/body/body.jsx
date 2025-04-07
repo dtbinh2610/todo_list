@@ -310,8 +310,10 @@ function SideBar({ setOpenSidebar }) {
                     </svg>
                   </span>
                   {/*Planned*/}
-                  <span className="listItem-title">Planned</span>
-                  <div className="listItem-count">10</div>
+                  <Link className="listItem-title" to="CompletedTask">
+                 Completed Task
+                </Link>
+                 
                 </div>
               </div>
             </li>
@@ -399,7 +401,10 @@ function DetailsBar({
         }
         return response.json();
       })
-      .then((result) => {})
+      .then((result) => {
+        setTask((prev) => ({ ...prev, title: inputValue }));
+        setRefresh((prev) => prev + 1);
+      })
       .catch((error) => {
         console.error("Lỗi:", error);
       });
@@ -545,7 +550,7 @@ theme="light"
                     <div
                       className={`section-title ${isClick ? "isClick" : ""}`}
                     >
-                      Add to my day
+                     {isClick ? "Added to my day" : "Add to my day "}
                     </div>
                   </div>
                 </div>
@@ -582,8 +587,7 @@ theme="light"
         <div className="section">
           <div className="section-item">
             <div className="noteContainer">
-              {/* <input onChange={(e) => setInputDes(e.target.value)} onKeyDown={(e)=> updateDescription(e)} value={infoTask.description} className="addNote" type="text" placeholder="Add note" />
-               */}
+              
               <div
                 className="addNote"
                 contentEditable
@@ -647,59 +651,3 @@ theme="light"
     </>
   );
 }
-// function HeaderBody({ setOpenSidebar }) {
-//   return (
-//     <>
-//       <div className="header-body">
-//         <div className="toolbar-headline">
-//           <div className="toolbar-container">
-//             <button
-//               className="btn-sidebar"
-//               onClick={() => setOpenSidebar((prevState) => !prevState)}
-//             >
-//               <svg
-//                 className="fluentIcon"
-//                 aria-label=""
-//                 fill="currentColor"
-//                 aria-hidden="true"
-//                 width="20"
-//                 height="20"
-//                 viewBox="0 0 20 20"
-//                 xmlns="http://www.w3.org/2000/svg"
-//               >
-//                 <path
-//                   d="M2 4.5c0-.28.22-.5.5-.5h15a.5.5 0 010 1h-15a.5.5 0 01-.5-.5zm0 5c0-.28.22-.5.5-.5h15a.5.5 0 010 1h-15a.5.5 0 01-.5-.5zm.5 4.5a.5.5 0 000 1h15a.5.5 0 000-1h-15z"
-//                   fill="currentColor"
-//                 ></path>
-//               </svg>
-//             </button>
-
-//             <div className="toolbar-title">
-//               <h2 className="list-title">
-//                 <span>Important</span>
-//               </h2>
-//             </div>
-//           </div>
-
-//           <div className="toolbarSort-btn ">
-//             <svg
-//               class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0"
-//               aria-label=""
-//               fill="currentColor"
-//               aria-hidden="true"
-//               width="20"
-//               height="20"
-//               viewBox="0 0 20 20"
-//               xmlns="http://www.w3.org/2000/svg"
-//             >
-//               <path
-//                 d="M2.35 7.35L5 4.71V16.5a.5.5 0 001 0V4.7l2.65 2.65a.5.5 0 00.7-.7l-3.49-3.5A.5.5 0 005.5 3a.5.5 0 00-.39.18L1.65 6.65a.5.5 0 10.7.7zm15.3 5.3L15 15.29V3.5a.5.5 0 00-1 0v11.8l-2.65-2.65a.5.5 0 00-.7.7l3.49 3.5a.5.5 0 00.36.15.5.5 0 00.39-.18l3.46-3.47a.5.5 0 10-.7-.7z"
-//                 fill="currentColor"
-//               ></path>
-//             </svg>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }

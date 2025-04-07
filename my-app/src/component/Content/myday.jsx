@@ -31,11 +31,7 @@ export default function MyDay({ BASE_URL }) {
       .then((result) => {
         console.log("aloasd:", result);
         setTasks(result)
-        // setTasks((prevTasks) =>
-        //   prevTasks.map((task) =>
-        //     task.id === id ? { ...task, isMyDay: false } : task
-        //   )
-        // );
+   
       })
       .catch((error) => {
         console.error("Lỗi:", error);
