@@ -50,9 +50,13 @@
   color: #2564cf;
 }
 .dateButton {
+  padding:5px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 .dateButton:hover {
   background-color: white;

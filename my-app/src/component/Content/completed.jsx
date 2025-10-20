@@ -8,7 +8,6 @@ export default function CompletedTask({ BASE_URL }) {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [tasks, setTasks] = useState([]);
   const {
- 
     handleSideBar,
     handleDetailBar,
     openSidebar,
@@ -30,7 +29,7 @@ export default function CompletedTask({ BASE_URL }) {
       })
       .then((result) => {
         console.log("aloasd:", result);
-        setTasks(result)      
+        setTasks(result);
       })
       .catch((error) => {
         console.error("Lỗi:", error);
@@ -84,7 +83,7 @@ export default function CompletedTask({ BASE_URL }) {
       })
       .then((result) => {
         console.log(result);
-        
+
         setTasks((prevTasks) =>
           prevTasks.map((task) =>
             task.id === id ? { ...task, isCompleted: !isCompleted } : task
@@ -94,6 +93,23 @@ export default function CompletedTask({ BASE_URL }) {
       .catch((error) => {
         console.error("Lỗi:", error);
       });
+  };
+  const handleSort = () => {
+    fetch(`${BASE_URL}/api/Task/GetTaskIscomplete?userid=${user.id}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Lỗi khi tải dữ liệu");
+      }
+      return response.json();
+    })
+    .then((result) => {
+      // Sắp xếp lại dữ liệu sau khi tải lại từ server
+      const sortedTasks = result.sort((a, b) => new Date(a.createAt) - new Date(b.createAt));
+      setTasks(sortedTasks); // Cập nhật lại tasks sau khi sắp xếp
+    })
+    .catch((error) => {
+      console.error("Lỗi:", error);
+    });
   };
   const notify = () => {
     toast.warn("Add tittle !", {
@@ -107,43 +123,7 @@ export default function CompletedTask({ BASE_URL }) {
       theme: "light",
     });
   };
-  const handleAddClick = () => {
-    
-    if (inputRef.current.value == "") {
-      return notify();
-    }
-    const data = {
-      title: inputRef.current.value,
-      description: "",
-      userId: user.id,
-      isCompleted: false,
-      isImportant: true,
-      isMyDay: false,
-    };
-    fetch(`${BASE_URL}/api/Task/add`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Lỗi khi up dữ liệu");
-        }
-        return response.json();
-      })
-      .then((result) => {
-        const newTask = result;
 
-        // Thêm trực tiếp vào state
-        setTasks((prevTasks) => [...prevTasks, newTask]);
-        inputRef.current.value = "";
-      })
-      .catch((error) => {
-        console.error("Lỗi:", error);
-      });
-  };
   return (
     <>
       <ToastContainer
@@ -158,59 +138,14 @@ export default function CompletedTask({ BASE_URL }) {
         pauseOnHover
         theme="light"
       />
-      <HeaderBody handleSideBar={handleSideBar} openSidebar={openSidebar} />
+      <HeaderBody
+        handleSideBar={handleSideBar}
+        openSidebar={openSidebar}
+        tasks={tasks}
+        handleSort={handleSort}
+        
+      />
       <div className="content-container">
-        <div className="taskCreation-container">
-          <div className="taskCreation">
-            <button className="addTask" onClick={() => handleAddClick()}>
-              <svg
-                className="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0"
-                aria-label=""
-                fill="currentColor"
-                aria-hidden="true"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10 2.5a.5.5 0 00-1 0V9H2.5a.5.5 0 000 1H9v6.5a.5.5 0 001 0V10h6.5a.5.5 0 000-1H10V2.5z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </button>
-            <input
-              ref={inputRef}
-              id="addTask"
-              className="addInput"
-              type="text"
-              placeholder="Add text"
-            
-            />
-          </div>
-          <div className="taskCreation-detail">
-            <div className="dateButton-container">
-              <button className="dateButton">
-                <svg
-                  className="fluentIcon dateButton-icon ___12fm75w f1w7gpdv fez10in fg4l7m0"
-                  aria-label=""
-                  fill="currentColor"
-                  aria-hidden="true"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 11a1 1 0 100-2 1 1 0 000 2zm1 2a1 1 0 11-2 0 1 1 0 012 0zm2-2a1 1 0 100-2 1 1 0 000 2zm1 2a1 1 0 11-2 0 1 1 0 012 0zm2-2a1 1 0 100-2 1 1 0 000 2zm4-5.5A2.5 2.5 0 0014.5 3h-9A2.5 2.5 0 003 5.5v9A2.5 2.5 0 005.5 17h9a2.5 2.5 0 002.5-2.5v-9zM4 7h12v7.5c0 .83-.67 1.5-1.5 1.5h-9A1.5 1.5 0 014 14.5V7zm1.5-3h9c.83 0 1.5.67 1.5 1.5V6H4v-.5C4 4.67 4.67 4 5.5 4z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
         <div className="task ">
           <div className=" chunkedComponentList">
             <div className=" chunkedScrollContainer">
@@ -220,10 +155,9 @@ export default function CompletedTask({ BASE_URL }) {
                   <p>Không có task nào trong ngày hôm nay</p>
                 ) : (
                   tasks
-                    .filter(
-                      (task) =>
-                        task.isCompleted == true 
-                    )
+
+                    .filter((task) => task.isCompleted == true)
+                    
                     .map((task) => (
                       <div key={task.id} className="taskItem-container">
                         <div className="taskItem-body">
@@ -277,7 +211,12 @@ export default function CompletedTask({ BASE_URL }) {
                               handleDetailBar(!openDetailbar, task)
                             }
                           >
-                            <span className="taskItem-title">{task.title}</span>
+                            <span
+                              style={{ textDecoration: "line-through" }}
+                              className="taskItem-title"
+                            >
+                              {task.title}
+                            </span>
                           </button>
                           <div className="importantBtn-container">
                             <button
@@ -324,7 +263,8 @@ export default function CompletedTask({ BASE_URL }) {
   );
 }
 // function HeaderBody({ setOpenSidebar }) {
-function HeaderBody({ handleSideBar, openSidebar }) {
+function HeaderBody({ handleSideBar, openSidebar, handleSort }) {
+  
   return (
     <>
       <div className="header-body">
@@ -353,12 +293,12 @@ function HeaderBody({ handleSideBar, openSidebar }) {
 
             <div className="toolbar-title">
               <h2 className="list-title">
-                <span>Completed</span> 
+                <span>Completed</span>
               </h2>
             </div>
           </div>
 
-          <div className="toolbarSort-btn ">
+          <div className="toolbarSort-btn " onClick={() => handleSort()}>
             <svg
               class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0"
               aria-label=""

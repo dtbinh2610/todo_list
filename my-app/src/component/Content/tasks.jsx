@@ -3,9 +3,8 @@ import "tailwindcss";
 import "./content.css";
 import { useOutletContext } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import Notify from "../notify/notify";
 
-export default function MyDay({ BASE_URL }) {
+export default function Tasks({ BASE_URL }) {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [tasks, setTasks] = useState([]);
   const {
@@ -16,13 +15,14 @@ export default function MyDay({ BASE_URL }) {
     openDetailbar,
     id,
     refresh,
+
   } = useOutletContext();
   const inputRef = useRef(null);
 
   useEffect(() => {
     if (!user) return;
 
-    fetch(`${BASE_URL}/api/Task/GetTaskIsMyDay?userid=${user.id}`)
+    fetch(`${BASE_URL}/api/Task/GetTaskByUser?userid=${user.id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Lỗi khi đăng nhập");
@@ -31,9 +31,8 @@ export default function MyDay({ BASE_URL }) {
       })
       .then((result) => {
         console.log("aloasd:", result);
-       
+  
         setTasks(result)
-   
       })
       .catch((error) => {
         console.error("Lỗi:", error);
@@ -98,13 +97,11 @@ export default function MyDay({ BASE_URL }) {
         console.error("Lỗi:", error);
       });
   };
-
-  
-  
+ 
   const handleAddClick = () => {
     
     if (inputRef.current.value == "") {
-      return warning("Add your title ");
+      return warning("Add your title");
     }
     const data = {
       title: inputRef.current.value,
@@ -112,7 +109,7 @@ export default function MyDay({ BASE_URL }) {
       userId: user.id,
       isCompleted: false,
       isImportant: false,
-      isMyDay: true,
+      isMyDay: false,
     };
     fetch(`${BASE_URL}/api/Task/add`, {
       method: "POST",
@@ -205,7 +202,7 @@ export default function MyDay({ BASE_URL }) {
                   tasks
                     .filter(
                       (task) =>
-                        task.isCompleted == false && task.isMyDay == true
+                        task.isCompleted == false
                     )
                     .map((task) => (
                       <div key={task.id} className="taskItem-container">
@@ -336,7 +333,7 @@ function HeaderBody({ handleSideBar, openSidebar }) {
 
             <div className="toolbar-title">
               <h2 className="list-title">
-                <span>My day</span> 
+                <span>Important</span> 
               </h2>
             </div>
           </div>

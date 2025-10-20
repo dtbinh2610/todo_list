@@ -23,6 +23,7 @@ export default function Body() {
     setTask(taskInfo);
   };
 
+
   return (
     <>
       <div
@@ -38,6 +39,7 @@ export default function Body() {
             openDetailbar,
             id,
             refresh,
+     
           }}
         />
       </div>
@@ -54,147 +56,7 @@ export default function Body() {
     </>
   );
 }
-// function ContentBody({setOpenDetailbar}) {
-//   return (
-//     <div className="content-container">
-//       <div className="taskCreation-container">
-//         <div className="taskCreation">
-//           <button className="addTask">
-//             <svg
-//               class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0"
-//               aria-label=""
-//               fill="currentColor"
-//               aria-hidden="true"
-//               width="20"
-//               height="20"
-//               viewBox="0 0 20 20"
-//               xmlns="http://www.w3.org/2000/svg"
-//             >
-//               <path
-//                 d="M10 2.5a.5.5 0 00-1 0V9H2.5a.5.5 0 000 1H9v6.5a.5.5 0 001 0V10h6.5a.5.5 0 000-1H10V2.5z"
-//                 fill="currentColor"
-//               ></path>
-//             </svg>
-//           </button>
-//           <input className="addInput" type="text" placeholder="Add text" />
-//         </div>
-//         <div className="taskCreation-detail">
-//           <div className="dateButton-container">
-//             <button className="dateButton">
-//               <svg
-//                 class="fluentIcon dateButton-icon ___12fm75w f1w7gpdv fez10in fg4l7m0"
-//                 aria-label=""
-//                 fill="currentColor"
-//                 aria-hidden="true"
-//                 width="20"
-//                 height="20"
-//                 viewBox="0 0 20 20"
-//                 xmlns="http://www.w3.org/2000/svg"
-//               >
-//                 <path
-//                   d="M7 11a1 1 0 100-2 1 1 0 000 2zm1 2a1 1 0 11-2 0 1 1 0 012 0zm2-2a1 1 0 100-2 1 1 0 000 2zm1 2a1 1 0 11-2 0 1 1 0 012 0zm2-2a1 1 0 100-2 1 1 0 000 2zm4-5.5A2.5 2.5 0 0014.5 3h-9A2.5 2.5 0 003 5.5v9A2.5 2.5 0 005.5 17h9a2.5 2.5 0 002.5-2.5v-9zM4 7h12v7.5c0 .83-.67 1.5-1.5 1.5h-9A1.5 1.5 0 014 14.5V7zm1.5-3h9c.83 0 1.5.67 1.5 1.5V6H4v-.5C4 4.67 4.67 4 5.5 4z"
-//                   fill="currentColor"
-//                 ></path>
-//               </svg>
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="task ">
-//         <div className=" chunkedComponentList">
-//           <div className=" chunkedScrollContainer">
-//             {/*scroll*/}
-//             <div className="componentList">
-//               <div className="taskFadeShrink">
-//                 <div className="taskItem-container" onClick={()=> setOpenDetailbar((prevState)=> !prevState)}>
-//                   <div className="taskItem-body">
-//                     <span className="checkbox">
-//                       {/*eventListener*/}
-//                       <svg
-//                         class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0"
-//                         aria-label=""
-//                         fill="currentColor"
-//                         aria-hidden="true"
-//                         width="20"
-//                         height="20"
-//                         viewBox="0 0 20 20"
-//                         xmlns="http://www.w3.org/2000/svg"
-//                         focusable="false"
-//                       >
-//                         <path
-//                           d="M10 3a7 7 0 100 14 7 7 0 000-14zm-8 7a8 8 0 1116 0 8 8 0 01-16 0z"
-//                           fill="currentColor"
-//                         ></path>
-//                       </svg>
-//                       <svg
-//                         class="fluentIcon checkBox-hover ___12fm75w f1w7gpdv fez10in fg4l7m0"
-//                         aria-label=""
-//                         fill="currentColor"
-//                         aria-hidden="true"
-//                         width="20"
-//                         height="20"
-//                         viewBox="0 0 20 20"
-//                         xmlns="http://www.w3.org/2000/svg"
-//                         focusable="false"
-//                       >
-//                         <path
-//                           d="M10 2a8 8 0 110 16 8 8 0 010-16zm0 1a7 7 0 100 14 7 7 0 000-14zm3.36 4.65c.17.17.2.44.06.63l-.06.07-4 4a.5.5 0 01-.64.07l-.07-.06-2-2a.5.5 0 01.63-.77l.07.06L9 11.3l3.65-3.65c.2-.2.51-.2.7 0z"
-//                           fill="currentColor"
-//                         ></path>
-//                       </svg>
-//                     </span>
-//                     <button className="taskItem-titleWrapper">
-//                       <span className="taskItem-title">ASDASDAS</span>
-//                     </button>
-//                     <div className="importantBtn-container">
-//                       <span className="btn-important">
-//                         {/*eventListener*/}
-//                         <svg
-//                           class="fluentIcon importantSvg1"
-//                           aria-label=""
-//                           fill="currentColor"
-//                           aria-hidden="true"
-//                           width="20"
-//                           height="20"
-//                           viewBox="0 0 20 20"
-//                           xmlns="http://www.w3.org/2000/svg"
-//                           focusable="false"
-//                         >
-//                           <path
-//                             d="M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-3.12 3.05.73 4.3a1 1 0 01-1.45 1.05L10 15.51l-3.86 2.03a1 1 0 01-1.45-1.05l.74-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9zm.9.44L8.07 7.25a1 1 0 01-.75.55L3 8.43l3.12 3.04a1 1 0 01.3.89l-.75 4.3 3.87-2.03a1 1 0 01.93 0l3.86 2.03-.74-4.3a1 1 0 01.29-.89L17 8.43l-4.32-.63a1 1 0 01-.75-.55L10 3.35z"
-//                             fill="currentColor"
-//                           ></path>
-//                         </svg>
-//                         <svg
-//                           class="fluentIcon importantSvg2"
-//                           aria-label=""
-//                           fill="currentColor"
-//                           aria-hidden="true"
-//                           width="20"
-//                           height="20"
-//                           viewBox="0 0 20 20"
-//                           xmlns="http://www.w3.org/2000/svg"
-//                           focusable="false"
-//                         >
-//                           <path
-//                             d="M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-3.12 3.05.73 4.3a1 1 0 01-1.45 1.05L10 15.51l-3.86 2.03a1 1 0 01-1.45-1.05l.74-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9z"
-//                             fill="currentColor"
-//                           ></path>
-//                         </svg>
-//                       </span>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-function SideBar({ setOpenSidebar }) {
+function SideBar({ setOpenSidebar,count }) {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -341,8 +203,10 @@ function SideBar({ setOpenSidebar }) {
                     </svg>
                   </span>
                   {/*Tasks*/}
-                  <span className="listItem-title">Tasks</span>
-                  <div className="listItem-count">10</div>
+                  <Link className="listItem-title" to="Tasks">
+                Tasks
+                </Link>
+                 
                 </div>
               </div>
             </li>
@@ -354,7 +218,7 @@ function SideBar({ setOpenSidebar }) {
                 <div className="listItem-inner">
                   <span className="listItem-icon">👋</span>
                   <span className="listItem-title">Getting started</span>
-                  <div className="listItem-count">10</div>
+                  
                 </div>
               </div>
             </li>
@@ -364,7 +228,7 @@ function SideBar({ setOpenSidebar }) {
                   <span className="listItem-icon">🛒</span>
                   {/*Important*/}
                   <span className="listItem-title">grocceries</span>
-                  <div className="listItem-count">10</div>
+                  
                 </div>
               </div>
             </li>
@@ -578,7 +442,7 @@ theme="light"
                       ></path>
                     </svg>
                   </div>
-                  <div className="section-content">Add due date</div>
+                  <div className="section-content">{infoTask.dueDate}</div>
                 </div>
               </button>
             </div>

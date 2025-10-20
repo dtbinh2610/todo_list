@@ -3,12 +3,20 @@ import "tailwindcss";
 import "./content.css";
 import { useOutletContext } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css'
+import { error } from "../../utils/taskApi";
+import {
+  updateCompleteStatus,
+  updateImportantStatus,
+} from "../../utils/taskApi";
+import Notify from "../notify/notify";
 export default function Important({ BASE_URL }) {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [tasks, setTasks] = useState([]);
+  const [dueDate,setDueDate] = useState(new Date());
+  
   const {
- 
     handleSideBar,
     handleDetailBar,
     openSidebar,
@@ -30,12 +38,8 @@ export default function Important({ BASE_URL }) {
       })
       .then((result) => {
         console.log("aloasd:", result);
-        setTasks(result)
-        // setTasks((prevTasks) =>
-        //   prevTasks.map((task) =>
-        //     task.id === id ? { ...task, isMyDay: false } : task
-        //   )
-        // );
+        setTasks(result);
+       
       })
       .catch((error) => {
         console.error("Lỗi:", error);
@@ -43,22 +47,8 @@ export default function Important({ BASE_URL }) {
   }, [refresh]);
 
   const handleImportantClick = (id, isImportant) => {
-    fetch(
-      `${BASE_URL}/api/Task/UpdateStatusImportant?id=${id}&StatusImportant=${!isImportant}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Lỗi khi cập nhật trạng thái quan trọng");
-        }
-        return response.json();
-      })
-      .then((result) => {
+    updateImportantStatus(id, isImportant)
+      .then(() => {
         setTasks((prevTasks) =>
           prevTasks.map((task) =>
             task.id === id ? { ...task, isImportant: !isImportant } : task
@@ -70,52 +60,22 @@ export default function Important({ BASE_URL }) {
       });
   };
 
-  const handleCompleteClick = (id, isCompleted) => {
-    fetch(
-      `${BASE_URL}/api/Task/UpdateStatusComplete?id=${id}&StatusComplete=${!isCompleted}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Lỗi khi cập nhật trạng thái quan trọng");
-        }
+  const handleCompleteClick = async (id, isCompleted) => {
+    try {
+      await updateCompleteStatus(id, isCompleted);
+      setTasks(prev => prev.map(task =>
+        task.id === id ? { ...task, isCompleted: !isCompleted } : task
+      ));
+    } catch (error) {
+      console.error("Update failed:", error.message);
+    }
+  };
 
-        return response.json();
-      })
-      .then((result) => {
-        console.log(result);
-        
-        setTasks((prevTasks) =>
-          prevTasks.map((task) =>
-            task.id === id ? { ...task, isCompleted: !isCompleted } : task
-          )
-        );
-      })
-      .catch((error) => {
-        console.error("Lỗi:", error);
-      });
-  };
-  const notify = () => {
-    toast.warn("Add tittle !", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  };
+ 
   const handleAddClick = () => {
     
     if (inputRef.current.value == "") {
-      return notify();
+      return error("Add title");
     }
     const data = {
       title: inputRef.current.value,
@@ -124,6 +84,7 @@ export default function Important({ BASE_URL }) {
       isCompleted: false,
       isImportant: true,
       isMyDay: false,
+      DueDate: dueDate  
     };
     fetch(`${BASE_URL}/api/Task/add`, {
       method: "POST",
@@ -151,18 +112,7 @@ export default function Important({ BASE_URL }) {
   };
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      <Notify/>
       <HeaderBody handleSideBar={handleSideBar} openSidebar={openSidebar} />
       <div className="content-container">
         <div className="taskCreation-container">
@@ -190,12 +140,11 @@ export default function Important({ BASE_URL }) {
               className="addInput"
               type="text"
               placeholder="Add text"
-            
             />
           </div>
           <div className="taskCreation-detail">
             <div className="dateButton-container">
-              <button className="dateButton">
+            <div className="dateButton">
                 <svg
                   className="fluentIcon dateButton-icon ___12fm75w f1w7gpdv fez10in fg4l7m0"
                   aria-label=""
@@ -211,7 +160,10 @@ export default function Important({ BASE_URL }) {
                     fill="currentColor"
                   ></path>
                 </svg>
-              </button>
+                <DatePicker selected={dueDate} onChange={(date) => setDueDate(date)} />
+              </div>
+            
+             
             </div>
           </div>
         </div>
@@ -358,7 +310,7 @@ function HeaderBody({ handleSideBar, openSidebar }) {
 
             <div className="toolbar-title">
               <h2 className="list-title">
-                <span>Important</span> 
+                <span>Important</span>
               </h2>
             </div>
           </div>

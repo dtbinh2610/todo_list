@@ -1,6 +1,8 @@
 import "./login.css";
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { error } from "../../utils/taskApi";
+import Notify from "../notify/notify";
 
 export default function Login({ BASE_URL }) {
   const [users, setUser] = useState(null);
@@ -13,7 +15,7 @@ export default function Login({ BASE_URL }) {
     const password = passwordRef.current?.textContent.trim();
 
     if (!email || !password) {
-      alert("Vui lòng nhập đầy đủ thông tin!");
+      error("Please, fill your email and password")
       return;
     }
 
@@ -45,6 +47,7 @@ export default function Login({ BASE_URL }) {
 
   return (
     <div className="login-main">
+      <Notify/>
       <div className="loginContainer">
         <div className="login-header">To Do</div>
         <div className="login-body">
