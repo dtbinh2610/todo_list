@@ -60,7 +60,7 @@ export default function Login({ BASE_URL }) {
             <Link className="register-nav" to={"/Register"}>
               Don't have an account yet?
             </Link>
-            <p>v2</p>
+            <p>v3</p>
           </div>
         </div>
       </div>
