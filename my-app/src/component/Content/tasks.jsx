@@ -7,20 +7,29 @@ import { ToastContainer, toast } from "react-toastify";
 export default function Tasks({ BASE_URL }) {
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [tasks, setTasks] = useState([]);
-  const {
+  // const {
  
-    handleSideBar,
-    handleDetailBar,
-    openSidebar,
-    openDetailbar,
-    id,
-    refresh,
+  //   handleSideBar,
+  //   handleDetailBar,
+  //   openSidebar,
+  //   openDetailbar,
+  //   id,
+  //   refresh,
 
-  } = useOutletContext();
+  // } = useOutletContext();
+  const outlet = useOutletContext() || {};
+const {
+  handleSideBar,
+  handleDetailBar,
+  openSidebar,
+  openDetailbar,
+  id,
+  refresh,
+} = outlet;
   const inputRef = useRef(null);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user) throw new Error("User not found in sessionStorage");
 
     fetch(`${BASE_URL}/api/Task/GetTaskByUser?userid=${user.id}`)
       .then((response) => {
@@ -137,7 +146,7 @@ export default function Tasks({ BASE_URL }) {
   };
   return (
     <>
-      <Notify/>
+      {/* <Notify/> */}
       <HeaderBody handleSideBar={handleSideBar} openSidebar={openSidebar} />
       <div className="content-container">
         <div className="taskCreation-container">

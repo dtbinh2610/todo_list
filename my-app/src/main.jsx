@@ -11,7 +11,8 @@ import MyDay from "./component/Content/myday.jsx";
 import Important from "./component/Content/important.jsx";
 import CompletedTask from "./component/Content/completed.jsx";
 import Tasks from "./component/Content/tasks.jsx";
-const BASE_URL = "https://localhost:7176"
+// const BASE_URL = "https://localhost:7176"
+const BASE_URL = "https://gm-webapp-dev-01-f9cdd2ebb7drbadp.southeastasia-01.azurewebsites.net"
 
 // const  router = createBrowserRouter([
 //   {path:"/app",element:<App/>},
