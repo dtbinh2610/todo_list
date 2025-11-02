@@ -31,6 +31,9 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - script: echo "build ádasd:"
+      displayName: 'Print image info'
+
     - task: DockerCompose@1
       inputs:
         containerregistrytype: 'Container Registry'
