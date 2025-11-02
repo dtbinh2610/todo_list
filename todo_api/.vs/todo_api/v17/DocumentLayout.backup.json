@@ -1,0 +1,220 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Workspace\\f8_course\\react_js\\todo_api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\models\\entities\\todotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:models\\entities\\todotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\models\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:models\\entities\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\models\\dto\\dtotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:models\\dto\\dtotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\models\\dto\\dtogroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:models\\dto\\dtogroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|d:\\workspace\\f8_course\\react_js\\todo_api\\migrations\\20250410034554_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0212E603-46E4-426F-B376-6084915BEBB9}|todo_api.csproj|solutionrelative:migrations\\20250410034554_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T02:12:15.717Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TaskController.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "Controllers\\TaskController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T05:39:00.368Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-01T15:57:40.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\Entities\\User.cs",
+              "RelativeToolTip": "Models\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T06:00:31.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-27T06:00:27.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T05:43:00.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Group.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\Entities\\Group.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Group.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\Entities\\Group.cs",
+              "RelativeToolTip": "Models\\Entities\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T02:13:40.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T17:46:37.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TodoTask.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\Entities\\TodoTask.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\TodoTask.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\Entities\\TodoTask.cs",
+              "RelativeToolTip": "Models\\Entities\\TodoTask.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T07:37:25.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DTOGroup.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\DTO\\DTOGroup.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\DTOGroup.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\DTO\\DTOGroup.cs",
+              "RelativeToolTip": "Models\\DTO\\DTOGroup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T02:13:25.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20250410034554_init.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Migrations\\20250410034554_init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250410034554_init.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Migrations\\20250410034554_init.cs",
+              "RelativeToolTip": "Migrations\\20250410034554_init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T03:45:55.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DTOTask.cs",
+              "DocumentMoniker": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\DTO\\DTOTask.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\DTOTask.cs",
+              "ToolTip": "D:\\Workspace\\f8_course\\react_js\\todo_api\\Models\\DTO\\DTOTask.cs",
+              "RelativeToolTip": "Models\\DTO\\DTOTask.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T07:37:03.805Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
